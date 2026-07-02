@@ -23,7 +23,7 @@ export function Hero() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 pt-6">
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={buttonVariants({ size: "lg", className: "group shadow-md" })}>
+          <a href="./resume.pdf" target="_blank" rel="noopener noreferrer" className={buttonVariants({ size: "lg", className: "group shadow-md" })}>
             <Download className="mr-2 h-5 w-5" />
             Download Resume
           </a>

@@ -14,11 +14,11 @@ export function Contact() {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
-          <a href="mailto:maharajwalajigar38@gmail.com" className={buttonVariants({ size: "lg", className: "w-full sm:w-auto" })}>
+          <a href="mailto:maharajwalajigar38@gmail.com" className={buttonVariants({ size: "lg", className: "w-full sm:w-auto shadow-md" })}>
             <Mail className="mr-2 h-5 w-5" />
             Email Me
           </a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={buttonVariants({ variant: "outline", size: "lg", className: "w-full sm:w-auto" })}>
+          <a href="./resume.pdf" target="_blank" rel="noopener noreferrer" className={buttonVariants({ variant: "outline", size: "lg", className: "w-full sm:w-auto shadow-sm bg-card/50" })}>
             <Download className="mr-2 h-5 w-5" />
             Download Resume
           </a>
