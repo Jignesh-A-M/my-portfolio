@@ -1,45 +1,61 @@
 import { buttonVariants } from "@/components/ui/Button"
-import { ArrowRight, Download, Mail } from "lucide-react"
+import { ArrowRight, Download } from "lucide-react"
+import { ScrollReveal } from "@/components/ui/ScrollReveal"
+import { HeroGlow } from "@/components/ui/HeroGlow"
 
 export function Hero() {
   return (
-    <section id="hero" className="py-24 md:py-32 flex flex-col justify-center min-h-[85vh]">
-      <div className="space-y-8 max-w-4xl relative z-10">
-        <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary shadow-sm backdrop-blur-sm">
-          Available for new opportunities
-        </div>
-        
-        <div className="space-y-4">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-foreground">
-            Jignesh A. Maharajwala
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-muted-foreground">
-            Flutter Developer <span className="text-primary mx-2">|</span> Real-Time Communication <span className="text-primary mx-2">|</span> IoT <span className="text-primary mx-2">|</span> Cloud Solutions
-          </h2>
-        </div>
-        
-        <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl font-light">
-          I build production-grade Flutter applications focused on real-time communication, IoT connectivity, cloud integration, and high-performance mobile experiences.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 pt-6">
-          <a href="./resume.pdf" target="_blank" rel="noopener noreferrer" className={buttonVariants({ size: "lg", className: "group shadow-md" })}>
-            <Download className="mr-2 h-5 w-5" />
-            Download Resume
-          </a>
-          <a href="#projects" className={buttonVariants({ variant: "outline", size: "lg", className: "bg-card/50" })}>
-            View Projects
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </a>
-          <a href="#contact" className={buttonVariants({ variant: "outline", size: "lg", className: "bg-card/50" })}>
-            <Mail className="mr-2 h-5 w-5" />
-            Contact Me
-          </a>
-        </div>
-      </div>
+    <section id="hero" className="relative flex flex-col justify-center min-h-[85vh] py-24 border-b border-border overflow-hidden">
+      <HeroGlow />
       
-      {/* Decorative background blur element */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-64 bg-primary/5 blur-3xl rounded-full pointer-events-none -z-10" />
+      {/* Decorative element */}
+      <ScrollReveal delay={500} className="absolute top-32 right-12 text-accent/20 font-serif text-[120px] leading-none select-none hidden md:block">
+        *
+      </ScrollReveal>
+
+      <div className="max-w-6xl mx-auto w-full relative z-10">
+        
+        {/* Animated Container */}
+        <div>
+          <ScrollReveal delay={0}>
+            <span className="text-accent font-sans font-semibold tracking-[0.15em] text-[13px] uppercase mb-6 block">
+              01 — Introduction
+            </span>
+          </ScrollReveal>
+          
+          <ScrollReveal delay={100} className="space-y-4 mb-8">
+            <h1 className="font-serif text-5xl md:text-[56px] lg:text-[72px] font-bold tracking-tight text-foreground leading-[1.1] text-balance">
+              Jignesh A. Maharajwala.
+            </h1>
+            
+            <h2 className="font-sans text-sm md:text-base font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+              Senior Flutter Developer &middot; Cloud Architect
+            </h2>
+          </ScrollReveal>
+          
+          <ScrollReveal delay={200}>
+            <p className="text-lg md:text-xl text-foreground leading-relaxed max-w-3xl font-sans mb-10 text-balance">
+              I architect and build production-grade applications that bridge complex systems into seamless mobile experiences. Dedicated to delivering scalable solutions that drive measurable business value across real-time communication, IoT connectivity, and robust cloud platforms.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={300}>
+            <div className="h-px w-full max-w-2xl bg-border mb-10" />
+            
+            <div className="flex flex-col sm:flex-row gap-5 justify-start">
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={buttonVariants({ size: "lg", className: "rounded-none bg-foreground text-background hover:bg-foreground/90 transition-all font-semibold uppercase tracking-wider text-xs px-10 h-14" })}>
+                <Download className="mr-3 h-4 w-4" />
+                Download Resume
+              </a>
+              <a href="#projects" className={buttonVariants({ variant: "outline", size: "lg", className: "rounded-none bg-transparent border-foreground text-foreground hover:bg-muted transition-all font-semibold uppercase tracking-wider text-xs px-10 h-14 underline-fill" })}>
+                View Case Studies
+                <ArrowRight className="ml-3 h-4 w-4" />
+              </a>
+            </div>
+          </ScrollReveal>
+        </div>
+
+      </div>
     </section>
   )
 }

@@ -8,8 +8,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  basePath: isProd ? "/my-portfolio" : "",
-  // assetPrefix is NOT needed when basePath is set. It can cause duplicate prefixes.
 };
 
 export default nextConfig;

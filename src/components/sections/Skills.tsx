@@ -1,6 +1,3 @@
-import { Badge } from "@/components/ui/Badge"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
-
 export function Skills() {
   const skillCategories = [
     {
@@ -38,32 +35,35 @@ export function Skills() {
   ]
 
   return (
-    <section id="skills" className="py-24 border-t border-border/40 relative">
-      <div className="space-y-8">
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Technical Skills</h2>
-          <p className="text-lg text-muted-foreground font-light">
-            A comprehensive overview of my technical expertise and tools I use daily.
+    <section id="skills" className="relative scroll-mt-32 py-16">
+      <div className="grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20">
+        
+        {/* Left Column: Title */}
+        <div className="md:sticky md:top-32 h-fit">
+          <span className="eyebrow">03 — Skills</span>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-6 text-foreground">
+            Capabilities
+          </h2>
+          <p className="text-lg text-muted-foreground font-normal">
+            A comprehensive overview of my technical expertise and the tools I use to build scalable solutions.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 pt-4">
-          {skillCategories.map((group, index) => (
-            <Card key={index}>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg font-semibold">{group.category}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill, sIndex) => (
-                    <Badge key={sIndex} variant="secondary">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        {/* Right Column: Content */}
+        <div>
+          <div className="border-t border-border mb-10" />
+          <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
+            {skillCategories.map((group, index) => (
+              <div key={index} className="flex flex-col gap-2">
+                <h3 className="text-lg font-serif font-semibold tracking-tight text-foreground uppercase text-[13px] tracking-wider mb-1">
+                  {group.category}
+                </h3>
+                <p className="text-base text-muted-foreground leading-relaxed font-normal">
+                  {group.skills.join(", ")}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

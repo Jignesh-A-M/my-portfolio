@@ -1,52 +1,66 @@
-import { Code2, Cpu, Cloud, Smartphone } from "lucide-react"
+import { ScrollReveal } from "@/components/ui/ScrollReveal"
 
 export function About() {
-  const highlights = [
-    {
-      title: "Mobile Development",
-      description: "3+ years of experience building cross-platform apps for Android and iOS using Flutter and Dart.",
-      icon: <Smartphone className="h-6 w-6 text-primary" />,
-    },
-    {
-      title: "Real-Time Communication",
-      description: "Integrating LiveKit, Twilio, WebRTC, and CallKit for seamless audio/video streaming.",
-      icon: <Code2 className="h-6 w-6 text-primary" />,
-    },
-    {
-      title: "IoT & Connectivity",
-      description: "Working with BLE, ESP32, and Wi-Fi provisioning for connected smart devices.",
-      icon: <Cpu className="h-6 w-6 text-primary" />,
-    },
-    {
-      title: "Cloud & Architecture",
-      description: "Deploying scalable backends with AWS, Firebase, and adhering to Clean Architecture principles.",
-      icon: <Cloud className="h-6 w-6 text-primary" />,
-    },
-  ]
+  const allSkills = [
+    "Flutter", "Dart", "Android", "iOS", 
+    "LiveKit", "Twilio", "WebRTC", "CallKit", "AVAudioSession", "AWS Chime SDK",
+    "BLE", "ESP32", "NRF7002DK", "Wi-Fi Provisioning", "Telemetry",
+    "Firebase", "AWS Cognito", "AWS Lambda", "DynamoDB", "S3", "AWS Connect",
+    "REST APIs", "Shopify API", "BLoC", "GetX", "Clean Architecture",
+    "Git", "CI/CD", "Firebase Test Lab"
+  ];
 
   return (
-    <section id="about" className="py-24 border-t border-border/40 relative">
-      <div className="space-y-8">
-        <div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">About Me</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed font-light">
-            Flutter Developer with 3+ years of experience building cross-platform mobile applications for Android and iOS. Experienced in LiveKit, Twilio, WebRTC, BLE, AWS, Firebase, REST APIs, Shopify API, CI/CD, and mobile performance optimization.
-          </p>
+    <section id="about" className="relative scroll-mt-32 py-24 border-t border-border">
+      <div className="grid lg:grid-cols-2 gap-16 lg:gap-0">
+        
+        {/* Left Column: Intro Text */}
+        <div className="lg:pr-16 flex flex-col justify-start h-full">
+          <ScrollReveal delay={0}>
+            <span className="eyebrow">02 — About</span>
+          </ScrollReveal>
+          <ScrollReveal delay={100}>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-8 text-foreground">
+              Background
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={200}>
+            <div className="prose prose-lg prose-p:font-sans prose-p:text-foreground prose-p:leading-relaxed prose-p:max-w-prose">
+              <p>
+                I am a Flutter Developer with over three years of experience building cross-platform mobile applications for Android and iOS. 
+              </p>
+              <p className="mt-4">
+                My technical expertise spans across real-time communication protocols like LiveKit and WebRTC, hardware connectivity via BLE and ESP32, and robust cloud architectures using AWS and Firebase. I focus on creating seamless, high-performance user experiences powered by clean architecture principles.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-6 pt-8">
-          {highlights.map((item, index) => (
-            <div key={index} className="flex gap-4 p-5 rounded-2xl border border-border/60 bg-card/50 backdrop-blur-sm hover:bg-card hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-              <div className="shrink-0 p-3 bg-primary/5 rounded-xl h-fit border border-primary/10">
-                {item.icon}
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-1">{item.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed font-light">{item.description}</p>
-              </div>
+        {/* Right Column: Skills */}
+        <div id="skills" className="lg:pl-16 border-t lg:border-t-0 lg:border-l border-border flex flex-col justify-start h-full scroll-mt-32 mt-12 pt-12 lg:mt-0 lg:pt-0">
+          <ScrollReveal delay={100}>
+            <span className="eyebrow">03 — Toolkit</span>
+          </ScrollReveal>
+          <ScrollReveal delay={200}>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-8 text-foreground">
+              Skills &amp; Technologies
+            </h2>
+          </ScrollReveal>
+          
+          <ScrollReveal delay={300}>
+            <div className="flex flex-wrap gap-x-4 gap-y-3 leading-loose text-lg font-sans font-medium text-muted-foreground">
+              {allSkills.map((skill, index) => (
+                <span 
+                  key={index} 
+                  className="underline-fill text-foreground cursor-default transition-colors hover:text-accent"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
-          ))}
+          </ScrollReveal>
         </div>
+
       </div>
     </section>
   )
