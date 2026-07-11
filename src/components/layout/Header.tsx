@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Magnetic } from "@/components/ui/Magnetic";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -48,9 +49,11 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <a href="#contact" className="hidden sm:inline-flex items-center justify-center border border-foreground bg-foreground text-background hover:bg-transparent hover:text-foreground text-[11px] uppercase tracking-[0.2em] font-semibold transition-colors h-10 px-6 py-2">
-            Hire Me
-          </a>
+          <Magnetic distance={30}>
+            <a href="#contact" className="hidden sm:inline-flex items-center justify-center border border-foreground bg-foreground text-background hover:bg-transparent hover:text-foreground text-[11px] uppercase tracking-[0.2em] font-semibold transition-colors h-10 px-6 py-2">
+              Hire Me
+            </a>
+          </Magnetic>
         </div>
       </div>
     </header>

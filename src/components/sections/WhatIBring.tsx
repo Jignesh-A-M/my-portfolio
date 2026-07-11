@@ -9,7 +9,7 @@ export function WhatIBring() {
       icon: <Video className="h-5 w-5 text-accent" />,
     },
     {
-      title: "IoT & BLE Connectivity",
+      title: <>IoT <span className="simple-amp">&amp;</span> BLE Connectivity</>,
       description: "Device provisioning, BLE communication, telemetry sync, ESP32, and NRF7002DK integration.",
       icon: <Cpu className="h-5 w-5 text-accent" />,
     },
@@ -26,7 +26,7 @@ export function WhatIBring() {
   ]
 
   return (
-    <section id="what-i-bring" className="relative scroll-mt-32 py-24">
+    <section id="what-i-bring" className="relative scroll-mt-32 py-[100px] md:py-[120px]">
       <div className="grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20">
         
         {/* Left Column: Title */}
@@ -35,7 +35,7 @@ export function WhatIBring() {
             <span className="eyebrow">01 — Value</span>
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-6 text-foreground">
+            <h2 className="text-4xl md:text-5xl font-serif font-medium tracking-tight mb-6 text-foreground">
               What I Bring
             </h2>
           </ScrollReveal>

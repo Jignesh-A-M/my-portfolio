@@ -11,7 +11,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="relative scroll-mt-32 py-24 border-t border-border">
+    <section id="about" className="relative py-[100px] md:py-[120px] border-t border-border scroll-mt-20">
       <div className="grid lg:grid-cols-2 gap-16 lg:gap-0">
         
         {/* Left Column: Intro Text */}
@@ -20,7 +20,7 @@ export function About() {
             <span className="eyebrow">02 — About</span>
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-8 text-foreground">
+            <h2 className="text-4xl md:text-5xl font-serif font-medium tracking-tight mb-8 text-foreground">
               Background
             </h2>
           </ScrollReveal>
@@ -41,9 +41,9 @@ export function About() {
           <ScrollReveal delay={100}>
             <span className="eyebrow">03 — Toolkit</span>
           </ScrollReveal>
-          <ScrollReveal delay={200}>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-8 text-foreground">
-              Skills &amp; Technologies
+          <ScrollReveal delay={100}>
+            <h2 className="text-4xl md:text-5xl font-serif font-medium tracking-tight mb-8 text-foreground">
+              Skills <span className="simple-amp">&amp;</span> Technologies
             </h2>
           </ScrollReveal>
           

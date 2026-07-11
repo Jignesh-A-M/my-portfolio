@@ -1,7 +1,16 @@
 import { Lock, Smartphone, Cloud, Cpu, Sparkles, ShoppingCart, ArrowRight } from "lucide-react"
 import { ScrollReveal } from "@/components/ui/ScrollReveal"
+import React from "react"
 
 export function ProjectsUnderNDA() {
+  const formatTitle = (title: string) => {
+    return title.split('&').map((part, i, arr) => (
+      <React.Fragment key={i}>
+        {part}
+        {i < arr.length - 1 && <span className="simple-amp">&amp;</span>}
+      </React.Fragment>
+    ));
+  };
   const projects = [
     {
       title: "Real-Time Voice & Video Communication Platform",
@@ -36,7 +45,7 @@ export function ProjectsUnderNDA() {
   ]
 
   return (
-    <section id="projects" className="relative scroll-mt-32 py-24">
+    <section id="projects" className="relative scroll-mt-32 py-[100px] md:py-[120px] border-t border-border">
       <div className="grid lg:grid-cols-[1fr_2.5fr] gap-12 lg:gap-20">
         
         {/* Left Column: Title */}
@@ -46,7 +55,7 @@ export function ProjectsUnderNDA() {
           </ScrollReveal>
           
           <ScrollReveal delay={100}>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-6 text-foreground flex flex-col gap-4">
+            <h2 className="text-4xl md:text-5xl font-serif font-medium tracking-tight mb-6 text-foreground flex flex-col gap-4">
               Projects
               <span className="inline-flex items-center border border-accent/20 bg-accent/5 px-2.5 py-1 text-xs font-semibold text-accent w-fit uppercase tracking-wider font-sans">
                 <Lock className="w-3 h-3 mr-1.5" /> NDA Protected
@@ -76,9 +85,9 @@ export function ProjectsUnderNDA() {
                 </div>
                 
                 <div className="space-y-4 flex-1 overflow-hidden">
-                  <h3 className="text-2xl md:text-3xl font-serif font-bold tracking-tight text-foreground flex items-center gap-4 flex-wrap sm:flex-nowrap">
+                  <h3 className="text-[28px] md:text-3xl font-serif font-normal leading-[1.3] tracking-tight text-foreground flex items-center gap-4 flex-wrap sm:flex-nowrap">
                     <span className="underline-fill group-hover:after:origin-bottom-left group-hover:after:scale-x-100 group-hover:text-foreground">
-                      {project.title}
+                      {formatTitle(project.title)}
                     </span>
                     <ArrowRight className="w-5 h-5 text-accent opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 shrink-0" />
                   </h3>

@@ -1,19 +1,15 @@
 import { buttonVariants } from "@/components/ui/Button"
 import { ArrowRight, Download } from "lucide-react"
 import { ScrollReveal } from "@/components/ui/ScrollReveal"
-import { HeroGlow } from "@/components/ui/HeroGlow"
+import { OrbitalNetwork } from "@/components/ui/OrbitalNetwork"
+import { Magnetic } from "@/components/ui/Magnetic"
 
 export function Hero() {
   return (
-    <section id="hero" className="relative flex flex-col justify-center min-h-[85vh] py-24 border-b border-border overflow-hidden">
-      <HeroGlow />
-      
-      {/* Decorative element */}
-      <ScrollReveal delay={500} className="absolute top-32 right-12 text-accent/20 font-serif text-[120px] leading-none select-none hidden md:block">
-        *
-      </ScrollReveal>
+    <section id="hero" className="relative flex flex-col justify-center py-[100px] md:py-[120px] min-h-screen border-b border-border overflow-hidden">
+      <OrbitalNetwork />
 
-      <div className="max-w-6xl mx-auto w-full relative z-10">
+      <div className="max-w-6xl mx-auto w-full relative z-10 px-6 md:px-12 pt-16">
         
         {/* Animated Container */}
         <div>
@@ -43,10 +39,12 @@ export function Hero() {
             <div className="h-px w-full max-w-2xl bg-border mb-10" />
             
             <div className="flex flex-col sm:flex-row gap-5 justify-start">
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={buttonVariants({ size: "lg", className: "rounded-none bg-foreground text-background hover:bg-foreground/90 transition-all font-semibold uppercase tracking-wider text-xs px-10 h-14" })}>
-                <Download className="mr-3 h-4 w-4" />
-                Download Resume
-              </a>
+              <Magnetic distance={40}>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={buttonVariants({ size: "lg", className: "rounded-none bg-foreground text-background hover:bg-foreground/90 transition-all font-semibold uppercase tracking-wider text-xs px-10 h-14 w-full sm:w-auto" })}>
+                  <Download className="mr-3 h-4 w-4" />
+                  Download Resume
+                </a>
+              </Magnetic>
               <a href="#projects" className={buttonVariants({ variant: "outline", size: "lg", className: "rounded-none bg-transparent border-foreground text-foreground hover:bg-muted transition-all font-semibold uppercase tracking-wider text-xs px-10 h-14 underline-fill" })}>
                 View Case Studies
                 <ArrowRight className="ml-3 h-4 w-4" />

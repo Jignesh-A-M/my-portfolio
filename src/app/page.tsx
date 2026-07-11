@@ -13,9 +13,11 @@ export default function Home() {
       {/* Editorial Header */}
       <Header />
 
+      {/* Hero is full-bleed, so it sits outside the constrained container */}
+      <Hero />
+
       {/* Main Content */}
-      <main className="flex-1 container mx-auto px-6 md:px-12 max-w-6xl pt-16">
-        <Hero />
+      <main className="flex-1 container mx-auto px-6 md:px-12 max-w-6xl">
         <WhatIBring />
         <About />
         <Experience />
@@ -23,14 +25,6 @@ export default function Home() {
         <Contact />
       </main>
 
-      {/* Footer */}
-      <footer className="py-8 bg-background">
-        <div className="container mx-auto flex items-center justify-center max-w-6xl px-6">
-          <p className="text-center text-[11px] font-bold tracking-[0.2em] text-muted-foreground/60 uppercase">
-            © {new Date().getFullYear()} Jignesh A. Maharajwala. All Rights Reserved.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

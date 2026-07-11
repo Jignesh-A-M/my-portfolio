@@ -18,7 +18,7 @@ export function Experience() {
   ]
 
   return (
-    <section id="experience" className="relative scroll-mt-32 py-24">
+    <section id="experience" className="relative scroll-mt-32 py-[100px] md:py-[120px] border-t border-border">
       <div className="grid lg:grid-cols-[1fr_2.5fr] gap-12 lg:gap-20">
         
         {/* Left Column: Title */}
@@ -27,7 +27,7 @@ export function Experience() {
             <span className="eyebrow">04 — Experience</span>
           </ScrollReveal>
           <ScrollReveal delay={100}>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-6 text-foreground">
+            <h2 className="text-4xl md:text-5xl font-serif font-medium tracking-tight mb-6 text-foreground">
               Work History
             </h2>
           </ScrollReveal>
@@ -48,7 +48,7 @@ export function Experience() {
                 </div>
                 
                 <div className="space-y-4 flex-1">
-                  <h3 className="text-3xl md:text-4xl font-serif font-bold tracking-tight text-foreground flex items-center gap-4">
+                  <h3 className="text-3xl md:text-4xl font-serif font-medium tracking-tight text-foreground flex items-center gap-4">
                     <span className="underline-fill group-hover:after:origin-bottom-left group-hover:after:scale-x-100 group-hover:text-foreground">
                       {exp.company}
                     </span>

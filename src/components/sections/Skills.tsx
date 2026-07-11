@@ -1,3 +1,5 @@
+import React from "react"
+
 export function Skills() {
   const skillCategories = [
     {
@@ -9,15 +11,15 @@ export function Skills() {
       skills: ["LiveKit", "Twilio", "WebRTC", "CallKit", "AVAudioSession", "AWS Chime SDK"],
     },
     {
-      category: "IoT & Connectivity",
+      category: <>IoT <span className="simple-amp">&amp;</span> Connectivity</>,
       skills: ["BLE", "ESP32", "NRF7002DK", "Wi-Fi Provisioning", "Telemetry"],
     },
     {
-      category: "Cloud & Backend",
+      category: <>Cloud <span className="simple-amp">&amp;</span> Backend</>,
       skills: ["Firebase", "AWS Cognito", "AWS Lambda", "DynamoDB", "S3", "AWS Connect"],
     },
     {
-      category: "APIs & Integrations",
+      category: <>APIs <span className="simple-amp">&amp;</span> Integrations</>,
       skills: ["REST APIs", "Shopify API", "Third-Party SDKs"],
     },
     {
@@ -41,7 +43,7 @@ export function Skills() {
         {/* Left Column: Title */}
         <div className="md:sticky md:top-32 h-fit">
           <span className="eyebrow">03 — Skills</span>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold tracking-tight mb-6 text-foreground">
+          <h2 className="text-4xl md:text-5xl font-serif font-medium tracking-tight mb-6 text-foreground">
             Capabilities
           </h2>
           <p className="text-lg text-muted-foreground font-normal">
